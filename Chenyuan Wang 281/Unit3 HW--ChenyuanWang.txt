@@ -1,0 +1,44 @@
+#hw1
+# call the library doing the hashes
+library("digest")
+# now do the hash code calculation
+digest("I learn a lot from this class when I am proper listening to the professor")
+digest("I do not learn a lot from this class when I am absent and playing on my Iphone")
+
+
+#hw3
+{ 
+   "ID":["1","2","3","4","5"],
+   "Name":["Alice","Bob","Dan","Pat","Hua"],
+   "Grades":["88","89","98","94","90"]
+}
+
+# Load the package required to read JSON files.
+library("rjson")
+# Give the input file name to the function.
+result <- fromJSON(file = "C:/Users/Íõ³ÂÔ²/Desktop/hw3jsondata.json")
+# Print the result.
+print(result)
+
+
+
+#hw4
+#install.packages("rjson", repos="http://cran.us.r-project.org")
+library("rjson")
+json_file = "http://crix.hu-berlin.de/data/crix.json"
+json_data = fromJSON(file=json_file)
+crix_data_frame = as.data.frame(json_data)
+a<-seq(1,2348,2)
+b<-seq(2,2348,2)
+date<-t(crix_data_frame[1,a])
+price<-t(crix_data_frame[1,b])
+
+return<-1:1174
+for(i in 1:1174)
+{return[i+1]<-log(price[i+1]/price[i])}
+new<-data.frame(date,price,return[1:1174])
+names(new)<-c("date","price","return")
+plot(new$date,new$return)
+arima(new$return, order = c(2,0,1))
+
+#These results suggest that the CRIX return series can be modeled by some ARIMA process, for example ARIMA(2, 0, 2).
