@@ -1,9 +1,0 @@
- HW Unit 3
-
- 1.make an R quantlet on GH to produce hash code for the 2 sentences: "I learn a lot from this class when I am proper listening to  the professor", "I do not learn a lot from this class when I am absent and playing on my Iphone". Compare the 2 hash sequences.
- 
- 2.Make 3-5 slides (in PPTX) on the DSA (Digital Signature Algorithms)
-
- 3.Make slides with R code where you create a JSON data set that you save and read again.
-
- 4.Download the CRIX data and make a plot of the time series, analyse its properties, i.e. fit ARMA, ARIMA etc. Is there a GARCH effect?
